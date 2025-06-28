@@ -1,8 +1,13 @@
+import { Box, Container } from "@chakra-ui/react";
+import Header from "./components/Header";
+
 const App = () => {
   return (
-    <>
-      <h1>AI Keyword Extractor</h1>
-    </>
+    <Box bg="blue.600" color="white" height="100vh" paddingTop={130}>
+      <Container maxW="3xl" centerContent>
+        <Header />
+      </Container>
+    </Box>
   );
 };
 
