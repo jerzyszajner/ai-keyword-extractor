@@ -3,14 +3,17 @@ import { Box, Container } from "@chakra-ui/react";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import TextInput from "./components/TextInput";
+import KeywordsModal from "./components/KeywordsModal";
 
 const App = () => {
   const [keywords, setKeywords] = useState("");
   const [isLoading, setIsLoading] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
   // Function to extract keywords from text
-  const extractKeywords = async (text) => {
+  const extractKeywords = async (inputText) => {
     setIsLoading(true);
+    setIsOpen(true);
 
     const apiKey = import.meta.env.VITE_COHERE_API_KEY;
     const apiUrl =
@@ -69,7 +72,7 @@ const App = () => {
 
               **OUTPUT FORMAT:** Only the keywords separated by commas, no additional text, labels, or explanations.
 
-              Text: ${text}
+              Text: ${inputText}
 
               Keywords:`,
             },
@@ -93,12 +96,17 @@ const App = () => {
       const data = json.message.content[0].text.trim();
 
       console.log(data);
+      setKeywords(data);
       setIsLoading(false);
     } catch (error) {
       console.error("Error:", error);
     } finally {
       setIsLoading(false);
     }
+  };
+
+  const closeModal = () => {
+    setIsOpen(false);
   };
 
   return (
@@ -108,6 +116,12 @@ const App = () => {
         <TextInput extractKeywords={extractKeywords} isLoading={isLoading} />
         <Footer />
       </Container>
+      <KeywordsModal
+        isOpen={isOpen}
+        closeModal={closeModal}
+        keywords={keywords}
+        isLoading={isLoading}
+      />
     </Box>
   );
 };

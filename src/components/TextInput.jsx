@@ -23,16 +23,12 @@ const TextInput = ({ extractKeywords }) => {
         duration: 3000,
         isClosable: false,
       });
-      resetText();
+      setText("");
     } else {
       // Call the function to extract keywords from text
       extractKeywords(text);
+      setText("");
     }
-  };
-
-  // Reset empty space in text field
-  const resetText = () => {
-    setText("");
   };
 
   return (
