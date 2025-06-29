@@ -1,12 +1,51 @@
-# React + Vite
+# AI Keyword Extractor
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple React application that extracts keywords from text using AI.
 
-Currently, two official plugins are available:
+## About
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+I built this project because I'm passionate about AI and learning how to create intelligent web applications. This keyword extractor showcases the integration of modern AI APIs with React to solve real-world text processing problems.
 
-## Expanding the ESLint configuration
+## Features
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- Paste text and extract relevant keywords
+- Powered by Cohere AI
+- Clean, responsive interface
+- Real-time keyword extraction
+
+## Demo
+
+[Live Demo](https://ai-keyword-extractor-react.netlify.app/)
+
+## Technologies
+
+- React 18
+- Vite
+- Chakra UI
+- Cohere API
+
+## Installation
+
+```bash
+npm install
+```
+
+## Usage
+
+```bash
+npm run dev
+```
+
+## Environment Variables
+
+Create a `.env` file:
+
+```
+VITE_COHERE_API_KEY=your_cohere_api_key
+```
+
+## Build
+
+```bash
+npm run build
+```

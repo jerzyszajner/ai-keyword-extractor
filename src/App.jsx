@@ -9,6 +9,7 @@ const App = () => {
   const [keywords, setKeywords] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
+  const [text, setText] = useState("");
 
   // Function to extract keywords from text
   const extractKeywords = async (inputText) => {
@@ -107,13 +108,19 @@ const App = () => {
 
   const closeModal = () => {
     setIsOpen(false);
+    setText("");
   };
 
   return (
     <Box bg="blue.600" color="white" height="100vh" paddingTop={130}>
       <Container maxW="3xl" centerContent>
         <Header />
-        <TextInput extractKeywords={extractKeywords} isLoading={isLoading} />
+        <TextInput
+          extractKeywords={extractKeywords}
+          isLoading={isLoading}
+          text={text}
+          setText={setText}
+        />
         <Footer />
       </Container>
       <KeywordsModal

@@ -1,10 +1,6 @@
-import { useState } from "react";
 import { Textarea, Button, useToast } from "@chakra-ui/react";
 
-const TextInput = ({ extractKeywords }) => {
-  // State for text input
-  const [text, setText] = useState("");
-
+const TextInput = ({ extractKeywords, text, setText }) => {
   // Toast for error messages
   const toast = useToast();
 
@@ -27,7 +23,6 @@ const TextInput = ({ extractKeywords }) => {
     } else {
       // Call the function to extract keywords from text
       extractKeywords(text);
-      setText("");
     }
   };
 
