@@ -26,7 +26,7 @@ I built this project because I'm passionate about AI and learning how to create 
 
 ## AI Model
 
-This project uses the `command-r-plus` model from Cohere for keyword extraction.
+This project uses the `command-a-03-2025` model from Cohere for keyword extraction.
 
 ## Installation
 
