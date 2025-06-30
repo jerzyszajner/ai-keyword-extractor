@@ -24,6 +24,10 @@ I built this project because I'm passionate about AI and learning how to create 
 - Chakra UI
 - Cohere API
 
+## AI Model
+
+This project uses the `command-r-plus` model from Cohere for keyword extraction.
+
 ## Installation
 
 ```bash
@@ -42,6 +46,10 @@ Create a `.env` file:
 
 ```
 VITE_COHERE_API_KEY=your_cohere_api_key
+```
+
+```
+VITE_COHERE_API_URL=https://api.cohere.ai/v2/chat
 ```
 
 ## Build
